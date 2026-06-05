@@ -9,9 +9,14 @@ Multi-rate conditioning trainer for NAM (Neural Amp Modeler) models.
 - Fine-tunes at 96kHz and 192kHz for better high-sample-rate performance
 - Exports `.namos` files (NamOS format)
 
+## Proprietary Notice
+
+**This is proprietary training methodology developed by Tonkraf.** The training code is provided for your personal use in training models compatible with the NamOS plugin. The underlying training method is proprietary and confidential. All rights reserved.
+
 ## Files
 
 - **`NamOS_Trainer.ipynb`** — Google Colab notebook with interactive training
+- **`NamOS_Trainer_Obfuscated.ipynb`** — Obfuscated version for deployment
 - **`netlify/`** — Static landing page for Netlify deployment
 - **`setup.sh`** — One-click setup script
 
