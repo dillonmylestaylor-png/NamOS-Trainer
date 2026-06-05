@@ -15,39 +15,27 @@ Multi-rate conditioning trainer for NAM (Neural Amp Modeler) models.
 - **`netlify/`** — Static landing page for Netlify deployment
 - **`setup.sh`** — One-click setup script
 
-## Quick Setup (3 Steps)
+## Quick Setup (2 Steps)
 
-### 1. Authenticate GitHub CLI
-
-Open Terminal and run:
-```bash
-gh auth login --web
-```
-Follow the browser prompt to authenticate.
-
-### 2. Run the Setup Script
-
-```bash
-cd /Users/juniper/Documents/OG\ NAM/NeuralAmpModelerPlugin-V1\ copy/NamOS-Trainer
-./setup.sh
-```
-
-This will:
-- Create the GitHub repo
-- Update the Colab link with your username
-- Push everything
-
-### 3. Deploy to Netlify
+### 1. Deploy to Netlify
 
 1. Go to [netlify.com/drop](https://netlify.com/drop)
 2. Drag the `netlify/` folder onto the page
 3. Get a live URL instantly
 
-**Or for auto-deploy on every push:**
+**Or for auto-deploy:**
 1. Sign up at [netlify.com](https://netlify.com)
-2. "Add new site" → "Import an existing project"
-3. Select your GitHub repo
-4. Set publish directory to `netlify/`
+2. "Add new site" → "Deploy manually"
+3. Drag the `netlify/` folder onto the page
+
+### 2. (Optional) Make the GitHub repo private
+
+The trainer notebook is hosted on Google Drive. The GitHub repo is only for the landing page.
+
+If you want to hide the source code:
+1. Go to https://github.com/dillonmylestaylor-png/NamOS-Trainer/settings
+2. Scroll down to "Danger Zone" → "Change repository visibility"
+3. Click "Change to private"
 
 ## Using the Notebook
 
