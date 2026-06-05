@@ -100,3 +100,4 @@ If you want to hide the source code:
 ## Support
 
 Made by [Tonkraf](https://www.tonkraf.com) · Built on [NAM](https://github.com/sdatkinson/NeuralAmpModeler)
+# Auto-deploy enabled
