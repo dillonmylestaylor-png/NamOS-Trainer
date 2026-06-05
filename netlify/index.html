@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NamOS Trainer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #1a1a2e;
+      color: #e0e0e0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .header {
+      width: 100%;
+      padding: 60px 20px 40px;
+      text-align: center;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    }
+    .header h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      background: linear-gradient(90deg, #4a90d9, #67b8de);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .header p {
+      font-size: 1.2rem;
+      color: #888;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(74, 144, 217, 0.15);
+      color: #4a90d9;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-top: 20px;
+      border: 1px solid rgba(74, 144, 217, 0.3);
+    }
+    .main {
+      max-width: 800px;
+      width: 100%;
+      padding: 40px 20px;
+    }
+    .cta {
+      text-align: center;
+      margin: 40px 0;
+    }
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: linear-gradient(135deg, #4a90d9, #3a7bc8);
+      color: white;
+      padding: 18px 40px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(74, 144, 217, 0.3);
+    }
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 30px rgba(74, 144, 217, 0.4);
+    }
+    .cta-button svg {
+      width: 24px;
+      height: 24px;
+    }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+      margin: 50px 0;
+    }
+    .feature {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 12px;
+      padding: 28px;
+      transition: all 0.3s ease;
+    }
+    .feature:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(74, 144, 217, 0.2);
+    }
+    .feature h3 {
+      color: #4a90d9;
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+    .feature p {
+      color: #999;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .steps {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 16px;
+      padding: 40px;
+      margin: 40px 0;
+    }
+    .steps h2 {
+      font-size: 1.5rem;
+      margin-bottom: 30px;
+      text-align: center;
+      color: #e0e0e0;
+    }
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+    .step:last-child { margin-bottom: 0; }
+    .step-number {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, #4a90d9, #3a7bc8);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+    .step-content h4 {
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: #e0e0e0;
+    }
+    .step-content p {
+      color: #999;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    .footer {
+      width: 100%;
+      text-align: center;
+      padding: 40px 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      color: #666;
+      font-size: 0.9rem;
+    }
+    .footer a {
+      color: #4a90d9;
+      text-decoration: none;
+    }
+    .footer a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 600px) {
+      .header h1 { font-size: 2.5rem; }
+      .features { grid-template-columns: 1fr; }
+      .steps { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>NamOS Trainer</h1>
+    <p>Multi-rate conditioning for Neural Amp Modeler. Expand your NAM models to work at 96kHz and 192kHz with sample rate-aware training.</p>
+    <div class="badge">Free &bull; Google Colab &bull; GPU Accelerated</div>
+  </div>
+
+  <div class="main">
+    <div class="cta">
+      <a class="cta-button" href="https://colab.research.google.com/github/YOUR_USERNAME/YOUR_REPO/blob/main/NamOS_Trainer.ipynb" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+          <polyline points="15 3 21 3 21 9"></polyline>
+          <line x1="10" y1="14" x2="21" y2="3"></line>
+        </svg>
+        Open in Google Colab
+      </a>
+    </div>
+
+    <div class="features">
+      <div class="feature">
+        <h3>Multi-Rate Training</h3>
+        <p>Fine-tune models at 96kHz and 192kHz simultaneously for consistent high-sample-rate performance.</p>
+      </div>
+      <div class="feature">
+        <h3>Batch Processing</h3>
+        <p>Upload multiple pre-trained models and captures. Train them all in one run with automatic early stopping.</p>
+      </div>
+      <div class="feature">
+        <h3>Sample Rate Conditioning</h3>
+        <p>Rate-aware conditioning layers let the model adapt its behavior based on the incoming sample rate.</p>
+      </div>
+      <div class="feature">
+        <h3>Easy Upload</h3>
+        <p>Drag and drop your DI, pre-trained .nam files, and capture recordings. No command line needed.</p>
+      </div>
+    </div>
+
+    <div class="steps">
+      <h2>How It Works</h2>
+      <div class="step">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <h4>Upload Your Files</h4>
+          <p>Provide your DI input signal, pre-trained .nam models, and their corresponding reamp capture .wav files.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <h4>Adjust Settings</h4>
+          <p>Set epochs, learning rate, batch size, and early stopping patience using the interactive sliders.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <h4>Train</h4>
+          <p>Click run. The notebook expands each model to 2-channel (audio + rate) and fine-tunes with progress bars.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-number">4</div>
+        <div class="step-content">
+          <h4>Download</h4>
+          <p>All trained .namos models are zipped and ready to download. Load them into your NamOS-compatible plugin.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>Made by <a href="https://www.tonkraf.com" target="_blank">Tonkraf</a> &bull; Built on <a href="https://github.com/sdatkinson/NeuralAmpModeler" target="_blank">NAM</a></p>
+  </div>
+</body>
+</html>
